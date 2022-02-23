@@ -46,4 +46,4 @@ async def actualking(ctx):
 
 
 TOKEN = os.environ.get('BOT_TOKEN')
-bot.run('OTQ1OTk1MTIxNzI2NDc2MzI4.YhYQnA.giBWtvVCAcy5pa8Ws1gvIHgbNGU')
+bot.run('TOKEN')
