@@ -4,6 +4,7 @@ from random import choice
 from helpcog import HelpCog
 from musiccog import MusicCog
 from badWords import bad_words
+from zoz import imgur
 
 bot = commands.Bot(command_prefix="!")
 bot.remove_command('help')
@@ -42,8 +43,8 @@ async def noob(ctx):
 @bot.command(name='actualking', help='Information about who is the actual king.')
 async def actualking(ctx):
 	await ctx.send('Well the Real king of this server and this world is Lord (Zoz Suli) Morad. \n Look at him: ')
-	await ctx.send('https://i.imgur.com/q38dWE2.jpg')
+	await ctx.send(choice(imgur))
 
 
 TOKEN = os.environ.get('BOT_TOKEN')
-bot.run('TOKEN')
+bot.run(TOKEN)

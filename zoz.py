@@ -1,0 +1,1 @@
+imgur = ['https://i.imgur.com/gbXvI3p.jpg', 'https://i.imgur.com/skeHB47.jpg', 'https://i.imgur.com/q38dWE2.jpg']
