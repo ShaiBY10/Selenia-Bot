@@ -3,7 +3,7 @@ from discord.ext import commands
 from youtube_dl import YoutubeDL
 
 
-class music_cog(commands.Cog):
+class MusicCog(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
@@ -18,7 +18,7 @@ class music_cog(commands.Cog):
 
 		self.vc = None
 
-	# searching the item on youtube
+	# searching the item on YouTube
 	def search_yt(self, item):
 		with YoutubeDL(self.YDL_OPTIONS) as ydl:
 			try:
@@ -49,7 +49,7 @@ class music_cog(commands.Cog):
 
 			m_url = self.music_queue[0][0]['source']
 
-			# try to connect to voice channel if you are not already connected
+			# try to connect to a voice channel if you are not already connected
 			if self.vc == None or not self.vc.is_connected():
 				self.vc = await self.music_queue[0][1].connect()
 
@@ -88,7 +88,6 @@ class music_cog(commands.Cog):
 
 				if self.is_playing == False:
 					await self.play_music(ctx)
-
 
 	@commands.command(name="pause", help="Pause the current song")
 	async def pause(self, ctx, *args):

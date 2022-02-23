@@ -1,9 +1,11 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 from discord.ext.commands import bot
+from random import choice
 
 
-class help_cog(commands.Cog):
+
+class HelpCog(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
@@ -27,7 +29,7 @@ class help_cog(commands.Cog):
 				self.text_channel_text.append(channel)
 
 				await self.send_to_all("Hello guys im online :D")
-				print(f"Connected sucssesfully")
+				print(f"Connected sucssesfully as {self.bot.user}")
 
 	async def send_to_all(self, msg):
 		for text_channel in self.text_channel_text:
@@ -36,3 +38,9 @@ class help_cog(commands.Cog):
 	@commands.command(name='help', help='displays all the available commands')
 	async def help(self, ctx):
 		await ctx.send(self.help_message)
+
+
+# status change
+status = ['Shai is AWSOME!', 'Some music', 'Gabgab is nerd!']
+
+
