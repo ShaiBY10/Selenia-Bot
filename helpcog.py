@@ -28,8 +28,8 @@ class HelpCog(commands.Cog):
 			for channel in guild.text_channels:
 				self.text_channel_text.append(channel)
 
-				await self.send_to_all("Hello guys im online :D")
-				print(f"Connected sucssesfully as {self.bot.user}")
+				#await self.send_to_all("Hello guys im online :D")
+				print(f"Connected successfully as {self.bot.user}")
 
 	async def send_to_all(self, msg):
 		for text_channel in self.text_channel_text:
