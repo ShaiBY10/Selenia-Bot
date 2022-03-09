@@ -50,7 +50,7 @@ async def actualking(ctx):
 # --COMMAND-- # send a zoz
 @bot.command(name='zoz', help="Receive random picture of Zozikim")
 async def zoz(ctx):
-    await ctx.send(link_generator(link))
+    await ctx.send(link_generator(str(link)))
 
 
 TOKEN = os.environ.get('BOT_TOKEN')

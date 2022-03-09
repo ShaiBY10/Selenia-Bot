@@ -21,7 +21,9 @@ link = list("https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/zoz%20(1).
 # folder in my github repo.
 def link_generator(link):
     link[64] = random.randint(1, number_of_pics)
-    print(*link,sep="")
+    link = "".join(link)
+    return link
+
 
 
 
