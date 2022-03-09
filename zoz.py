@@ -2,7 +2,6 @@ import github
 import random
 import os
 
-
 # "log in proccess with github token (https://github.com/settings/tokens)
 GIT_TOKEN = os.environ.get("GIT_TOKEN")
 g = github.Github(GIT_TOKEN).get_user()
@@ -12,19 +11,22 @@ repo = g.get_repo("Selenia-Bot")
 pics = repo.get_contents("pics")
 number_of_pics = len(pics)
 
-# setting the link to be a list so i can change a char in a specific index
-# index 64 is the index that i need to change for the RNG to work
-link = list("https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/zoz%20(1).jpeg")
+example = "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/zoz%20(1).jpeg"
 
 
-# define a function that takes the link and changes index 64 to be a random number from 1 to the length of the "pics"
-# folder in my github repo.
-def link_generator(link):
-    link[64] = random.randint(1, number_of_pics)
-    link = "".join(link)
-    return link
+# convert the example string into a list
+# replace the list index 64 with a random number in range of the len of pics
+def generate(link):
+    new = list(link)
+    new[64] = str(random.randint(1, len(pics)))  # str method here to prevent type error
+    return new
 
 
+# convert the list into string again
+def list_to_string(li):
+    converted = ""
+    return converted.join(li)
 
 
-
+unconverted_link = generate(example)
+pic = list_to_string(unconverted_link)
