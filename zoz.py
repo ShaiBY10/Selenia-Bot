@@ -1,52 +1,25 @@
-imgur = ['https://i.imgur.com/gbXvI3p.jpg', 'https://i.imgur.com/skeHB47.jpg', 'https://i.imgur.com/q38dWE2.jpg']
-links = [
-"https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/0.jpeg?raw=true",
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/1.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/2.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/3.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/4.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/5.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/6.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/7.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/8.jpeg?raw=true"
- ,"https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/9.jpeg?raw=true"
-, "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/10.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/11.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/12.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/13.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/14.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/15.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/16.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/17.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/18.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/19.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/20.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/21.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/22.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/23.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/24.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/25.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/26.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/27.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/28.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/29.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/30.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/31.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/32.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/33.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/34.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/35.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/36.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/37.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/38.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/39.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/40.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/41.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/42.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/43.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/44.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/45.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/46.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/47.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/48.jpeg?raw=true",
-]
+import github
+import random
+
+# "log in proccess with github token (https://github.com/settings/tokens)
+g = github.Github("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").get_user()
+# getting the repository
+repo = g.get_repo("Selenia-Bot")
+# getting a list of all items in {Selenia-bot} repo
+pics = repo.get_contents("pics")
+number_of_pics = len(pics)
+
+# setting the link to be a list so i can change a char in a specific index
+# index 64 is the index that i need to change for the RNG to work
+link = list("https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/zoz%20(1).jpeg")
+
+
+# define a function that takes the link and changes index 64 to be a random number from 1 to the length of the "pics"
+# folder in my github repo.
+def link_generator(link):
+    link[64] = random.randint(1, number_of_pics)
+    print(*link,sep="")
+
+
+
+
