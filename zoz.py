@@ -17,16 +17,14 @@ example = "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/zoz%20(1).jp
 # convert the example string into a list
 # replace the list index 64 with a random number in range of the len of pics
 def generate(link):
-    new = list(link)
-    new[64] = str(random.randint(1, len(pics)))  # str method here to prevent type error
-    return new
+    listed = list(link)
+    listed[64] = str(random.randint(1, len(pics)))  # str method to prevent Type Error
+    return listed
 
 
-# convert the list into string again
-def list_to_string(li):
-    converted = ""
-    return converted.join(li)
+def list_string(li):
+    new_str = ""
+    return new_str.join(li)
 
 
-unconverted_link = generate(example)
-pic = list_to_string(unconverted_link)
+
