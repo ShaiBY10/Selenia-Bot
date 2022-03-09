@@ -5,7 +5,7 @@ import os
 
 # "log in proccess with github token (https://github.com/settings/tokens)
 GIT_TOKEN = os.environ.get("GIT_TOKEN")
-g = github.Github("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").get_user()
+g = github.Github(GIT_TOKEN).get_user()
 # getting the repository
 repo = g.get_repo("Selenia-Bot")
 # getting a list of all items in {Selenia-bot} repo
