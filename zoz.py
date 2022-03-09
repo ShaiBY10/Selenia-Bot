@@ -11,7 +11,7 @@ repo = g.get_repo("Selenia-Bot")
 pics = repo.get_contents("pics")
 number_of_pics = len(pics)
 
-example = "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/zoz%20(1).jpeg"
+example = "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/zoz%20(1).jpeg?raw=true"
 
 
 # convert the example string into a list
