@@ -11,7 +11,6 @@ from zoz import img_list, imagekit
 from buba import buba_list
 
 bot = commands.Bot(command_prefix="!")
-bot.remove_command('help')
 bot.add_cog(HelpCog(bot))
 bot.add_cog(MusicCog(bot))
 
