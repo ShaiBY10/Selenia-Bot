@@ -60,17 +60,13 @@ async def buba(ctx):
 
 
 @bot.command(name='uploadz', help="Upload picture to zoz database")
-async def uploadz(ctx, filepath, uploadname):
+async def uploadz(ctx, img_link, file_name):
     imagekit.upload(
-        file=open(filepath, "rb"),
-        file_name=uploadname,
-        options={
-            "response_fields": ["is_private_file", "tags"],
-            "tags": ["tag1", "tag2"],
-            "folder": "zoz"
-        },
+        file=img_link,
+        file_name=file_name,
+        options={"folder":"buba"},
     )
-    print(f'Photo uploaded with name of {uploadname}')
+
 
 TOKEN = os.environ.get('BOT_TOKEN')
 bot.run(TOKEN)
