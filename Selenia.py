@@ -1,10 +1,8 @@
 from discord.ext import commands, tasks
 import os
-from random import choice
 from helpcog import HelpCog
 from musiccog import MusicCog
-from badWords import bad_words
-from zoz import zoz_pic
+from zoz import zoz_pic, imagekit
 from buba import buba_pic
 
 bot = commands.Bot(command_prefix="!")
@@ -59,6 +57,23 @@ async def zoz(ctx):
 @bot.command(name='buba', help="Receive random picture of Osharit")
 async def buba(ctx):
     await ctx.send(buba_pic)
+
+
+@bot.command(name='uploadz', help="Upload picture to zoz database")
+async def uploadz(ctx, filepath, uploadname):
+    try:
+        imagekit.upload(
+            file=open(filepath, "rb"),
+            file_name=uploadname,
+            options={
+                "response_fields": ["is_private_file", "tags"],
+                "tags": ["tag1", "tag2"],
+                "folder": "zoz"
+            },
+        )
+        print(f'Photo uploaded with name of {uploadname}')
+    except:
+        print('Something went wrong.')
 
 
 TOKEN = os.environ.get('BOT_TOKEN')
