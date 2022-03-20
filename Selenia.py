@@ -4,7 +4,7 @@ from random import choice
 from helpcog import HelpCog
 from musiccog import MusicCog
 from badWords import bad_words
-from zoz import generate, list_string, example
+from zoz import pic
 
 bot = commands.Bot(command_prefix="!")
 bot.remove_command('help')
@@ -17,7 +17,8 @@ bot.add_cog(MusicCog(bot))
 # async def on_message(msg):
 # 	for word in bad_words:
 # 		if word in msg.content:
-# 			await msg.channel.send(f'{msg.author.mention} Dont say that! \n Your words can hurt! \n Think twice before saying them!')
+# 			await msg.channel.send(f'{msg.author.mention} Dont say that! \n Your words can hurt! \n Think twice before
+# 			saying them!')
 # 			await msg.channel.edit('Im a selfish guy who thinks only about himself.')
 
 
@@ -37,7 +38,8 @@ async def king(ctx):
 @bot.command(name='noob', help='Information about who is noob.(He is really noob and he is also a dick!')
 async def noob(ctx):
     await ctx.send(
-        'The noob of this server is clearly Gabi Gab Gab Shemesh since he tries all these failed flip reset\'s and he is just STINKY NOOB!')
+        'The noob of this server is clearly Gabi Gab Gab Shemesh since he tries all these failed flip reset\'s and he '
+        'is just STINKY NOOB!')
 
 
 # --COMMAND-- # send a message
@@ -49,8 +51,6 @@ async def actualking(ctx):
 # --COMMAND-- # send a zoz
 @bot.command(name='zoz', help="Receive random picture of Zozikim")
 async def zoz(ctx):
-    x = generate(example)
-    pic = list_string(x)
     await ctx.send(pic)
 
 

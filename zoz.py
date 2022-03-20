@@ -1,30 +1,20 @@
-import github
 import random
+
+from imagekitio import ImageKit
 import os
 
-# "log in proccess with github token (https://github.com/settings/tokens)
-GIT_TOKEN = os.environ.get("GIT_TOKEN")
-g = github.Github(GIT_TOKEN).get_user()
-# getting the repository
-repo = g.get_repo("Selenia-Bot")
-# getting a list of all items in {Selenia-bot} repo
-pics = repo.get_contents("pics")
-number_of_pics = len(pics)
+PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
+PUBLIC_KEY = os.environ.get('PUBLIC_KEY')
 
-example = "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/zoz%20(1).jpeg?raw=true"
+imagekit = ImageKit(
+    private_key='private_t1qkmUJbw7rbbOvAzXzdvpVIjuc=',
+    public_key='public_dmcSobM4l5e3s0zt2dzSUJd2hPA=',
+    url_endpoint='https://ik.imagekit.io/ShaiTestingPython')
+img_list = []
 
+list_files = imagekit.list_files({"path": "zoz"})
+for i in range(0,len(list_files['response'])):
+    img_list.append(list_files['response'][i]['url'])
 
-# convert the example string into a list
-# replace the list index 64 with a random number in range of the len of pics
-def generate(link):
-    listed = list(link)
-    listed[64] = str(random.randint(1, len(pics)))  # str method to prevent Type Error
-    return listed
-
-
-def list_string(li):
-    new_str = ""
-    return new_str.join(li)
-
-
-
+pic = random.choice(img_list)
+print(pic)

@@ -21,3 +21,5 @@ urllib3==1.26.8
 wrapt==1.13.3
 yarl==1.7.2
 youtube-dl==2021.12.17
+
+imagekitio==2.2.8

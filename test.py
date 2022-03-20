@@ -1,52 +1,19 @@
-links = [
-"https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/0.jpeg?raw=true",
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/1.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/2.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/3.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/4.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/5.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/6.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/7.jpeg?raw=true"
-",https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/8.jpeg?raw=true"
- ,"https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/9.jpeg?raw=true"
-, "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/10.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/11.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/12.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/13.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/14.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/15.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/16.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/17.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/18.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/19.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/20.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/21.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/22.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/23.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/24.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/25.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/26.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/27.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/28.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/29.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/30.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/31.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/32.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/33.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/34.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/35.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/36.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/37.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/38.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/39.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/40.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/41.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/42.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/43.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/44.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/45.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/46.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/47.jpeg?raw=true",
- "https://github.com/ShaiBY10/Selenia-Bot/blob/master/pics/48.jpeg?raw=true",
-]
+import json
 
+from imagekitio import ImageKit
+import os
+
+PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
+PUBLIC_KEY = os.environ.get('PUBLIC_KEY')
+
+imagekit = ImageKit(
+    private_key='private_t1qkmUJbw7rbbOvAzXzdvpVIjuc=',
+    public_key='public_dmcSobM4l5e3s0zt2dzSUJd2hPA=',
+    url_endpoint='https://ik.imagekit.io/ShaiTestingPython')
+img_list = []
+
+list_files = imagekit.list_files({"path": "zoz"})
+for i in range(0,len(list_files['response'])):
+    img_list.append(list_files['response'][i]['url'])
+
+print(img_list)
