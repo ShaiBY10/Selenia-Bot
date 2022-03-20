@@ -53,7 +53,7 @@ async def buba(ctx):
     await ctx.send(random.choice(buba_list))
 
 
-@bot.command(name='uploadb', help="Upload picture to buba database")
+@bot.command(name='uploadb', help="!uploadb <imagelink> <imgename> **The imagename can be whatever you want**")
 async def uploadb(ctx, img_link, file_name):
     try:
         imagekit.upload(
@@ -68,7 +68,7 @@ async def uploadb(ctx, img_link, file_name):
             '<imgename> \n *The imagename can be whatever you want')
 
 
-@bot.command(name='uploadz', help="Upload picture to buba database")
+@bot.command(name='uploadz', help="!uploadz <imagelink> <imgename> **The imagename can be whatever you want**")
 async def uploadz(ctx, img_link, file_name):
     try:
         imagekit.upload(
