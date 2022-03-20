@@ -4,7 +4,8 @@ from random import choice
 from helpcog import HelpCog
 from musiccog import MusicCog
 from badWords import bad_words
-from zoz import pic
+from zoz import zoz_pic
+from buba import buba_pic
 
 bot = commands.Bot(command_prefix="!")
 bot.remove_command('help')
@@ -51,7 +52,13 @@ async def actualking(ctx):
 # --COMMAND-- # send a zoz
 @bot.command(name='zoz', help="Receive random picture of Zozikim")
 async def zoz(ctx):
-    await ctx.send(pic)
+    await ctx.send(zoz_pic)
+
+
+# --COMMAND-- # send a buba
+@bot.command(name='buba', help="Receive random picture of Osharit")
+async def zoz(ctx):
+    await ctx.send(buba_pic)
 
 
 TOKEN = os.environ.get('BOT_TOKEN')

@@ -10,11 +10,11 @@ imagekit = ImageKit(
     private_key=PRIVATE_KEY,
     public_key=PUBLIC_KEY,
     url_endpoint='https://ik.imagekit.io/ShaiTestingPython')
-img_list = []
+buba_list = []
 
-list_files = imagekit.list_files({"path": "zoz"})
+list_files = imagekit.list_files({"path": "buba"})
 for i in range(0, len(list_files['response'])):
-    img_list.append(list_files['response'][i]['url'])
+    buba_list.append(list_files['response'][i]['url'])
 
-zoz_pic = random.choice(img_list)
+buba_pic = random.choice(buba_list)
 
