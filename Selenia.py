@@ -57,7 +57,7 @@ async def zoz(ctx):
 
 # --COMMAND-- # send a buba
 @bot.command(name='buba', help="Receive random picture of Osharit")
-async def zoz(ctx):
+async def buba(ctx):
     await ctx.send(buba_pic)
 
 
