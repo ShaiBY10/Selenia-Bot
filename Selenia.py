@@ -59,13 +59,34 @@ async def buba(ctx):
     await ctx.send(buba_pic)
 
 
-@bot.command(name='uploadz', help="Upload picture to zoz database")
+@bot.command(name='uploadb', help="Upload picture to buba database")
+async def uploadb(ctx, img_link, file_name):
+    try:
+        imagekit.upload(
+            file=img_link,
+            file_name=file_name,
+            options={"folder": "buba"},
+        )
+        ctx.send(f"Image {file_name} is uploaded to buba folder successfully ")
+    except:
+        ctx.send(
+            'Something went wrong. \n Please use this format to upload a photo: \n !upload<z/b> <imagelink> '
+            '<imgename> \n *The imagename can be whatever you want')
+
+
+@bot.command(name='uploadz', help="Upload picture to buba database")
 async def uploadz(ctx, img_link, file_name):
-    imagekit.upload(
-        file=img_link,
-        file_name=file_name,
-        options={"folder":"buba"},
-    )
+    try:
+        imagekit.upload(
+            file=img_link,
+            file_name=file_name,
+            options={"folder": "zoz"},
+        )
+        ctx.send(f"Image {file_name} is uploaded to zoz folder successfully! ")
+    except:
+        ctx.send(
+            'Something went wrong. \n Please use this format to upload a photo: \n !upload<z/b> <imagelink> '
+            '<imgename> \n *The imagename can be whatever you want')
 
 
 TOKEN = os.environ.get('BOT_TOKEN')
