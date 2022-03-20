@@ -8,8 +8,8 @@ PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
 PUBLIC_KEY = os.environ.get('PUBLIC_KEY')
 
 imagekit = ImageKit(
-    private_key=PRIVATE_KEY,
-    public_key=PUBLIC_KEY,
+    private_key='private_14HavAbKV7J1AvBUHKypUQ/4UjQ=',
+    public_key='public_rXfGljrkT3jh84HCHQTs3c7eJDw=',
     url_endpoint='https://ik.imagekit.io/ShaiTestingPython')
 img_list = []
 
@@ -18,4 +18,3 @@ for i in range(0, len(list_files['response'])):
     img_list.append(list_files['response'][i]['url'])
 
 zoz_pic = random.choice(img_list)
-
