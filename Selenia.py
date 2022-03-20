@@ -82,9 +82,9 @@ async def uploadz(ctx, img_link, file_name):
             file_name=file_name,
             options={"folder": "zoz"},
         )
-        ctx.send(f"Image {file_name} is uploaded to zoz folder successfully! ")
+        await ctx.send(f"Image {file_name} is uploaded to zoz folder successfully! ")
     except:
-        ctx.send(
+        await ctx.send(
             'Something went wrong. \n Please use this format to upload a photo: \n !upload<z/b> <imagelink> '
             '<imgename> \n *The imagename can be whatever you want')
 
