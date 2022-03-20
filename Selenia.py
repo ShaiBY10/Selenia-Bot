@@ -2,6 +2,9 @@ import random
 
 from discord.ext import commands, tasks
 import os
+
+from discord.ext.commands import MissingRequiredArgument
+
 from helpcog import HelpCog
 from musiccog import MusicCog
 from zoz import img_list, imagekit
@@ -11,16 +14,6 @@ bot = commands.Bot(command_prefix="!")
 bot.remove_command('help')
 bot.add_cog(HelpCog(bot))
 bot.add_cog(MusicCog(bot))
-
-
-# # --Bad Words catcher-- #
-# @bot.event
-# async def on_message(msg):
-# 	for word in bad_words:
-# 		if word in msg.content:
-# 			await msg.channel.send(f'{msg.author.mention} Dont say that! \n Your words can hurt! \n Think twice before
-# 			saying them!')
-# 			await msg.channel.edit('Im a selfish guy who thinks only about himself.')
 
 
 # --COMMAND-- # says what the user puts in ""
@@ -70,9 +63,9 @@ async def uploadb(ctx, img_link, file_name):
             options={"folder": "buba"},
         )
         ctx.send(f"Image {file_name} is uploaded to buba folder successfully ")
-    except:
+    except MissingRequiredArgument:
         ctx.send(
-            'Something went wrong. \n Please use this format to upload a photo: \n !upload<z/b> <imagelink> '
+            'That\'s not the format. \n Please use this format to upload a photo: \n !upload<z/b> <imagelink> '
             '<imgename> \n *The imagename can be whatever you want')
 
 
@@ -85,9 +78,9 @@ async def uploadz(ctx, img_link, file_name):
             options={"folder": "zoz"},
         )
         await ctx.send(f"Image {file_name} is uploaded to zoz folder successfully! ")
-    except:
+    except MissingRequiredArgument:
         await ctx.send(
-            'Something went wrong. \n Please use this format to upload a photo: \n !upload<z/b> <imagelink> '
+            ' That\'s not the format. \n Please use this format to upload a photo: \n !upload<z/b> <imagelink> '
             '<imgename> \n *The imagename can be whatever you want')
 
 
