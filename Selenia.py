@@ -1,9 +1,11 @@
+import random
+
 from discord.ext import commands, tasks
 import os
 from helpcog import HelpCog
 from musiccog import MusicCog
-from zoz import zoz_pic, imagekit
-from buba import buba_pic
+from zoz import img_list, imagekit
+from buba import buba_list
 
 bot = commands.Bot(command_prefix="!")
 bot.remove_command('help')
@@ -50,13 +52,13 @@ async def actualking(ctx):
 # --COMMAND-- # send a zoz
 @bot.command(name='zoz', help="Receive random picture of Zozikim")
 async def zoz(ctx):
-    await ctx.send(zoz_pic)
+    await ctx.send(random.choice(img_list))
 
 
 # --COMMAND-- # send a buba
 @bot.command(name='buba', help="Receive random picture of Osharit")
 async def buba(ctx):
-    await ctx.send(buba_pic)
+    await ctx.send(random.choice(buba_list))
 
 
 @bot.command(name='uploadb', help="Upload picture to buba database")

@@ -17,4 +17,4 @@ list_files = imagekit.list_files({"path": "zoz"})
 for i in range(0, len(list_files['response'])):
     img_list.append(list_files['response'][i]['url'])
 
-zoz_pic = random.choice(img_list)
+

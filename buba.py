@@ -16,5 +16,5 @@ list_files = imagekit.list_files({"path": "buba"})
 for i in range(0, len(list_files['response'])):
     buba_list.append(list_files['response'][i]['url'])
 
-buba_pic = random.choice(buba_list)
+
 
